@@ -1,0 +1,6 @@
+- id: "member.created.success"
+  translation: "Member was successfully created."
+- id: "member.updated.success"
+  translation: "Member was successfully updated."
+- id: "member.destroyed.success"
+  translation: "Member was successfully destroyed."

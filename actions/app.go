@@ -58,9 +58,14 @@ func App() *buffalo.App {
 		// Setup and use translations:
 		app.Use(translations())
 
-		app.GET("/", HomeHandler)
+		app.ServeFiles("/assets", assetsBox) // serve files from the public directory
 
-		app.ServeFiles("/", assetsBox) // serve files from the public directory
+		api := app.Group("/api")
+		band := api.Resource("/bands", BandsResource{})
+		band.Resource("/members", MembersResource{})
+
+		app.GET("/{path:.+}", HomeHandler)
+		app.GET("/", HomeHandler)
 	}
 
 	return app
