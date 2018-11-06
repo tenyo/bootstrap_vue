@@ -2,7 +2,7 @@ package actions
 
 import "github.com/gobuffalo/buffalo"
 
-// HomeHandler is a default handler to serve up a home page.
+// HomeHandler serves the main Vue app
 func HomeHandler(c buffalo.Context) error {
-	return c.Render(200, r.HTML("index.html"))
+	return c.Render(200, r.HTML("home.html"))
 }
