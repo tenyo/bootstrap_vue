@@ -56,6 +56,11 @@ const configurator = {
     return {
       rules: [
         {
+          test: /\.css$/,
+          include: /node_modules/,
+          loaders: ['style-loader', 'css-loader'],
+        },
+        {
           test: /\.s[ac]ss$/,
           use: [
             MiniCssExtractPlugin.loader,
@@ -63,7 +68,7 @@ const configurator = {
             { loader: "sass-loader", options: {sourceMap: true}}
           ]
         },
-	{
+	      {
         	test: /\.vue/,
         	loader: "vue-loader"
       	},
